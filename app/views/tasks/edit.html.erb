@@ -1,5 +1,21 @@
-<h1>id: <%= @task.id %> のタスク編集ページ</h1>
+<div class="text-center">
+  <h2>タスクの編集</h2>
+</div>
 
-<%= render "form", task: @task %>
-
-<%= link_to "一覧に戻る", tasks_path %>
+<div class="row">
+  <aside class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @task, local: true) do |f| %>
+      <div class="form-group">
+        <%= f.label :content, "タスク" %>
+        <%= f.text_area :content, class: "form-control" %>          
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :status, "状　況" %>
+        <%= f.text_area :status, class: "form-control" %>          
+      </div>
+      
+      <%= f.submit "編集", class: "btn btn-primary btn-block" %>
+    <% end %>
+  </aside>
+</div>
