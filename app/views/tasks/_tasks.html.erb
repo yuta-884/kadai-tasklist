@@ -7,15 +7,15 @@
           <%= link_to task.user.name, user_path(task.user) %> <span class="text-muted">posted at <%= task.created_at %></span>
         </div>
         <div>
-          <p class="mb-1">タスク: <%= task.content %></p>
+          <p class="mb-1">task: <%= task.content %></p>
         </div>
         <div>
-          <p class="mb-1">状　況: <%= task.status %></p>
+          <p class="mb-1">status: <%= task.status %></p>
         </div>
         <div>
           <% if current_user == task.user %>
-            <%= link_to "編集する", edit_task_path(task), class: "btn btn-primary btn-sm" %>
-            <%= link_to "削除する", task, method: :delete, data: { confirm: "タスクを削除しますか？" }, class: "btn btn-danger btn-sm" %>
+            <%= link_to "Edit", edit_task_path(task), class: "btn btn-primary btn-sm" %>
+            <%= link_to "Delete", task, method: :delete, data: { confirm: "タスクを削除しますか？" }, class: "btn btn-danger btn-sm" %>
           <% end %>
         </div>
       </div>

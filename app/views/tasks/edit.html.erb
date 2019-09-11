@@ -1,21 +1,23 @@
 <div class="text-center">
-  <h2>タスクの編集</h2>
+  <h2>Edit</h2>
 </div>
 
 <div class="row">
   <aside class="col-sm-6 offset-sm-3">
     <%= form_with(model: @task, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+      
       <div class="form-group">
-        <%= f.label :content, "タスク" %>
+        <%= f.label :content, "task" %>
         <%= f.text_area :content, class: "form-control" %>          
       </div>
       
       <div class="form-group">
-        <%= f.label :status, "状　況" %>
+        <%= f.label :status, "status" %>
         <%= f.text_area :status, class: "form-control" %>          
       </div>
       
-      <%= f.submit "編集", class: "btn btn-primary btn-block" %>
+      <%= f.submit "Edit", class: "btn btn-primary btn-block" %>
     <% end %>
   </aside>
 </div>
